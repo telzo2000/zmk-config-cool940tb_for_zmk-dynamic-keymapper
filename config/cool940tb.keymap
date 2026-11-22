@@ -2,6 +2,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <zdkm.dtsi>
 
 #define MOUSE 4
 #define SCROLL 5
@@ -141,7 +142,7 @@
 
         NUM {
             bindings = <
-&kp ESC     &kp F1        &kp F2        &kp F3             &kp F4          &kp F5        &kp N1          &kp F6          &kp F7              &kp F8               &kp F9      &kp F10  &kp BSPC
+&zdkm_unlock     &kp F1        &kp F2        &kp F3             &kp F4          &kp F5        &kp N1          &kp F6          &kp F7              &kp F8               &kp F9      &kp F10  &kp BSPC
 &kp TAB     &kp AT_SIGN   &kp GRAVE     &kp DOUBLE_QUOTES  &kp SEMICOLON   &kp COLON     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW        &kp RIGHT_ARROW      &kp ENTER
 &kp LSHIFT  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2       &bt BT_SEL 3    &bt BT_SEL 4  &kp PIPE        &kp BACKSLASH   &kp RS(LEFT_BRACE)  &kp RS(RIGHT_BRACE)  &kp RSHIFT
                           &kp LGUI      &kp LCTRL          &kp UNDERSCORE  &none         &kp LALT        &kp N2
