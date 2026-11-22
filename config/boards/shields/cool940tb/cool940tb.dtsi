@@ -87,22 +87,22 @@
                 , <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 			
                 ;
     };
-  trackball0: trackball0 {
-    compatible = "cormoran,physical-layout-trackball";
-    display-name = "Trackball";
-    size = <120>;
-    x = <425>;
-    y = <125>;
-  };
 
-  rotary_encoders0: rotary_encoders0 {
-    compatible = "cormoran,physical-layout-rotary-encoders";
-    encoders = <&encoder0>;
-  };
-  encoder0: encoder0 {
-    compatible = "cormoran,physical-layout-rotary-encoder";
-    size = <120>;
-    x = <600>;
-    y = <80>;
-  };
+    left_encoder: encoder_left {
+        compatible = "alps,ec11";
+        a-gpios = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&xiao_d 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <12>;
+        status = "disabled";
+    };
+
+    right_encoder: encoder_right {
+        status = "disabled";
+    };
+
+    sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&left_encoder &right_encoder>;
+        triggers-per-rotation = <10>;
+    };
 };
